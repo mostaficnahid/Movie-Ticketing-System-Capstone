@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Movie Ticketing System - Project Infographic</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #f0f4f8;
+        }
+        .chart-container {
+            position: relative;
+            width: 100%;
+            max-width: 400px;
+            margin-left: auto;
+            margin-right: auto;
+            height: 300px;
+            max-height: 400px;
+        }
+        @media (min-width: 768px) {
+            .chart-container {
+                height: 350px;
+            }
+        }
+        .stat-card {
+            background-color: white;
+            border-radius: 0.5rem;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+            padding: 1.5rem;
+            text-align: center;
+            border-left: 5px solid #4ECDC4;
+        }
+        .flow-card {
+            background-color: white;
+            border-radius: 0.5rem;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+            padding: 1.5rem;
+            height: 100%;
+        }
+        .flow-card h3 {
+            color: #4ECDC4;
+        }
+        .flow-card li {
+            position: relative;
+            padding-left: 1.75rem;
+            margin-bottom: 0.5rem;
+        }
+        .flow-card li::before {
+            content: '✓';
+            position: absolute;
+            left: 0;
+            color: #4ECDC4;
+            font-weight: 700;
+        }
+    </style>
+</head>
+<body class="text-gray-800">
+
+    <div class="container mx-auto p-4 md:p-8 max-w-6xl">
+
+        <header class="text-center mb-12">
+            <h1 class="text-4xl md:text-5xl font-bold text-gray-900 mb-2" style="color: #45B7D1;">Movie Ticketing System</h1>
+            <p class="text-xl md:text-2xl font-light text-gray-700">A Capstone Project in C</p>
+        </header>
+
+        <section class="mb-12">
+            <h2 class="text-3xl font-bold text-center mb-8">Project at a Glance</h2>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                <div class="stat-card" style="border-color: #4ECDC4;">
+                    <div class="text-6xl font-bold" style="color: #4ECDC4;">2</div>
+                    <div class="text-xl font-semibold text-gray-700 mt-2">Core Modules</div>
+                    <p class="text-gray-600 mt-1">Admin & User functionalities</p>
+                </div>
+                <div class="stat-card" style="border-color: #FF6B6B;">
+                    <div class="text-6xl font-bold" style="color: #FF6B6B;">100%</div>
+                    <div class="text-xl font-semibold text-gray-700 mt-2">C Language</div>
+                    <p class="text-gray-600 mt-1">Built with C99 standard</p>
+                </div>
+                <div class="stat-card" style="border-color: #FED766;">
+                    <div class="text-6xl font-bold" style="color: #FED766;">3+</div>
+                    <div class="text-xl font-semibold text-gray-700 mt-2">Data Files</div>
+                    <p class="text-gray-600 mt-1">Persistent storage for users, movies, & bookings</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="mb-12">
+            <h2 class="text-3xl font-bold text-center mb-8">Core Features</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                <div class="flow-card">
+                    <h3 class="text-2xl font-bold mb-4 text-center">Admin Module</h3>
+                    <ul class="text-gray-700">
+                        <li>Add & Delete Movie Listings</li>
+                        <li>View All Movies</li>
+                        <li>Check Booking Status</li>
+                        <li>View Total Sales & Revenue</li>
+                    </ul>
+                </div>
+                <div class="flow-card" style="border-top: 5px solid #FF6B6B;">
+                    <h3 class="text-2xl font-bold mb-4 text-center" style="color: #FF6B6B;">User Module</h3>
+                    <ul class="text-gray-700">
+                        <li>View All Playing Movies</li>
+                        <li>Select Movie & Showtime</li>
+                        <li>Book Seats from 2D Grid</li>
+                        <li>Cancel Bookings</li>
+                        <li>View Booking History</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+        
+        <section class="mb-12">
+            <div class="bg-white rounded-lg shadow-md p-6">
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-6 items-center">
+                    <div>
+                        <h2 class="text-3xl font-bold mb-4">Technology Stack</h2>
+                        <p class="text-gray-700 mb-4">
+                            This project demonstrates mastery of fundamental C programming concepts. 
+                            The focus is on manual data management, memory allocation, and file I/O operations 
+                            to build a complete application from the ground up.
+                        </p>
+                        <ul class="list-disc list-inside text-gray-700 space-y-1">
+                            <li><strong>Language:</strong> C (C99 Standard)</li>
+                            <li><strong>Compiler:</strong> GCC</li>
+                            <li><strong>Key Features:</strong> Data Structures, File Handling, Pointers</li>
+                        </ul>
+                    </div>
+                    <div>
+                        <h3 class="text-xl font-semibold text-center mb-4">Core C Concepts Applied</h3>
+                        <div class="chart-container">
+                            <canvas id="techChart"></canvas>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="mb-12">
+            <div class="bg-white rounded-lg shadow-md p-6">
+                <h2 class="text-3xl font-bold text-center mb-8">Compilation &amp; Running</h2>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                    <div>
+                        <h3 class="text-xl font-semibold mb-3">Multi-File Compilation</h3>
+                        <p class="text-gray-700 mb-3">The project is modular, separating logic into different files.</p>
+                        <pre class="bg-gray-900 text-white p-4 rounded-md text-sm overflow-x-auto"><code>gcc main.c admin.c user.c -o app</code></pre>
+                    </div>
+                    <div>
+                        <h3 class="text-xl font-semibold mb-3">Execution</h3>
+                        <p class="text-gray-700 mb-3">Once compiled, the application runs directly in the terminal.</p>
+                        <pre class="bg-gray-900 text-white p-4 rounded-md text-sm overflow-x-auto"><code>./app</code></pre>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    </div>
+
+    <footer class="text-center p-6 bg-gray-900 text-gray-400 mt-12">
+        <p>Infographic generated from project README.</p>
+    </footer>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const ctx = document.getElementById('techChart').getContext('2d');
+            
+            const chartData = {
+                labels: ['File Handling', 'Data Structures (structs)', 'Pointers & Memory', 'Modular Functions', 'String Manipulation'],
+                datasets: [{
+                    label: 'Core C Concepts',
+                    data: [30, 25, 20, 15, 10],
+                    backgroundColor: [
+                        '#FF6B6B',
+                        '#4ECDC4',
+                        '#45B7D1',
+                        '#FED766',
+                        '#F8961E'
+                    ],
+                    borderColor: '#ffffff',
+                    borderWidth: 2
+                }]
+            };
+
+            const techChart = new Chart(ctx, {
+                type: 'doughnut',
+                data: chartData,
+                options: {
+                    responsive: true,
+                    maintainAspectRatio: false,
+                    plugins: {
+                        legend: {
+                            position: 'bottom',
+                            labels: {
+                                color: '#333333'
+                            }
+                        },
+                        tooltip: {
+                            callbacks: {
+                                title: function(tooltipItems) {
+                                    const item = tooltipItems[0];
+                                    let label = item.chart.data.labels[item.dataIndex];
+                                    if (Array.isArray(label)) {
+                                      return label.join(' ');
+                                    } else {
+                                      return label;
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            });
+        });
+    </script>
+
+</body>
+</html>
